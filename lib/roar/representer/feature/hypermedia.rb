@@ -1,5 +1,3 @@
-require "roar/model"
-
 module Roar
   module Representer
     module Feature
@@ -22,7 +20,6 @@ module Roar
         
         def before_serialize(options={})
           prepare_links! unless options[:links] == false  # DISCUSS: doesn't work when links are already setup (e.g. from #deserialize).
-          super # Representer::Base
         end
         
         def links=(link_list)
